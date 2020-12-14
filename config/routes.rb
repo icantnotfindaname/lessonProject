@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
-  # get 'sessions/new'
-  # get 'users/new'
-  # get 'welcome/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
-  resources :welcome
+  root 'welcome#index'
+  
   resources :users
   resources :sessions
+
+  namespace :admin do 
+    root 'users#index'
+    resources :users do 
+      collection do 
+        get :search
+      end
+    end
+  end
 
 end

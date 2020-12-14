@@ -37,6 +37,10 @@ gem 'jquery-rails'
 # bootstrap
 gem 'bootstrap-sass', '~> 3.4.1'
 
+# pagin 
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

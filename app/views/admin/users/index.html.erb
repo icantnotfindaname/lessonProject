@@ -1,0 +1,28 @@
+<h1>后台 - 用户列表</h1>
+
+<div class="row">
+    <div class="col-sm-12">
+
+        <form action="<%= search_admin_users_path %>" method="get">
+            username: <input type="text" name="username" value="<%= params[:username] %>" />
+            <input type="submit" name="search" />
+        </form>
+        <br><br/>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+            <% @users.each do |user| %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.username %></td>
+                    <td></td>
+                </tr>
+            <% end -%>
+        </table>
+
+        <%= will_paginate @users %>
+    </div>
+</div>
