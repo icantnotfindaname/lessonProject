@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h3>后台 - Pits List</h3>
+<br>
+<div class="row">
+  <div class="col-sm-25">
+    <table class="table">
+      <tr>
+        <th>Position</th>
+        <th>Size</th>
+        <th>Pid</th>
+        <th>Pnum</th>
+        <th>State</th>
+        <th>Time(h)</th>
+        <th>Usage(kg)</th>
+        <th>Cost(RMB)</th>
+        
+        <th></th>
+      </tr>
+      <% @pits.each do |pit| %>
+        <tr>
+          <td><%= pit.position %></td>
+          <td><%= pit.size %></td>
+          <td><%= pit.pid %></td>
+          <td><%= pit.pnum %></td>
+          <td><%= pit.state %></td>
+          <td><%= pit.time %></td>
+          <td><%= pit.usage %></td>
+          <td><%= pit.cost %></td>
+          
+          <td></td>
+        </tr>
+      <% end -%>
+    </table>
+  </div>
+</div>
+<br>
+
+<%# <%= link_to 'New Pit', new_pit_path %> 

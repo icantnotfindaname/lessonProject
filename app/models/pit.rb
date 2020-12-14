@@ -1,0 +1,2 @@
+class Pit < ApplicationRecord
+end

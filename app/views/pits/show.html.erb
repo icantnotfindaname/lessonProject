@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @pit.position %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @pit.size %>
+</p>
+
+<p>
+  <strong>Pid:</strong>
+  <%= @pit.pid %>
+</p>
+
+<p>
+  <strong>Pnum:</strong>
+  <%= @pit.pnum %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @pit.state %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @pit.time %>
+</p>
+
+<p>
+  <strong>Usage:</strong>
+  <%= @pit.usage %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @pit.cost %>
+</p>
+
+<%= link_to 'Edit', edit_pit_path(@pit) %> |
+<%= link_to 'Back', pits_path %>

@@ -32,11 +32,18 @@
               <li>
                 <a href="/">Home</a>
               </li>
-              <li>
-                <a href="<%= users_path%>">List</a>
-              </li>
 
+              <% if session[:user_id] == 1 %>
+                <li>
+                  <%= link_to "Admin", admins_index_path %>
+                </li>
+              <% end -%>
               <% if session[:user_id] %>
+                <% if session[:user_id] != 1 %>
+                  <li>
+                    <a href="<%= new_report_path%>">Report</a>
+                  </li>
+                <% end -%>
                 <li><%= link_to "#{User.find(session[:user_id]).username}, exit", session_path(session[:user_id]), method: 'delete' %></li>
               <% else %>
                 <li><%= link_to "Login", new_session_path %></li>

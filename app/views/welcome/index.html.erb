@@ -1,7 +1,14 @@
 <% if @user %>
-  <h1>Welcome, <%= @user.username %></h1>
-  <p>In here you can see the: </p>
-  <a href="<%= users_path%>">userList</a>
+  <h2>Welcome, <%= @user.username %></h2>
+  <% if session[:user_id] == 1 %>
+    <h2>You are the administer!</h2>
+    <br>
+    <strong>In here you can: </strong>
+    <a href="<%= admins_index_path %>">Visit the admin pages</a>
+  <% else %>
+    <strong>In here you can: </strong>
+    <a href="<%= reports_path%>">See the report list and submit a new report</a>
+  <% end -%>
 <% else %>
   <h1>PHTRS</h1>
   <p>To see more information, please log in.</p>
